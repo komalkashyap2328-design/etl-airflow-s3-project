@@ -1,6 +1,13 @@
 # 🚀 End-to-End Data Engineering Pipeline
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Python-ETL-blue?style=for-the-badge&logo=python"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql"/>
+  <img src="https://img.shields.io/badge/Apache%20Airflow-Orchestration-red?style=for-the-badge&logo=apacheairflow"/>
+  <img src="https://img.shields.io/badge/Docker-Container-blue?style=for-the-badge&logo=docker"/>
+</p>
+
+<p align="center">
   <b>Production-Ready ETL Pipeline using Python, PostgreSQL & Apache Airflow</b>
 </p>
 
@@ -25,7 +32,6 @@ It processes real-world e-commerce data, performs transformation, and loads stru
 
 ---
 ## ⚙️ Pipeline Architecture
-
 Raw Data (CSV)  
 ↓  
 Python ETL (Pandas)  
