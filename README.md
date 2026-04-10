@@ -27,7 +27,7 @@ It processes real-world e-commerce data, performs transformation, and loads stru
 - **PostgreSQL**
 - **Apache Airflow**
 - **Docker**
-- **AWS S3 (Optional)**
+- **AWS S3**
 - **Git & GitHub**
 
 ---
