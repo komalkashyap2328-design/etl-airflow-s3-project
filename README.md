@@ -1,5 +1,9 @@
 # 🚀 End-to-End Data Engineering Pipeline
 
+<p align="center">
+  <b>Production-Ready ETL Pipeline using Python, PostgreSQL & Apache Airflow</b>
+</p>
+
 ---
 
 ## 📌 Project Overview
