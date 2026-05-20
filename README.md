@@ -1,111 +1,150 @@
-# 🚀 End-to-End Data Engineering Pipeline
+<h1 align="center">End-to-End ETL Pipeline with Apache Airflow</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-ETL-blue?style=for-the-badge&logo=python"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql"/>
-  <img src="https://img.shields.io/badge/Apache%20Airflow-Orchestration-red?style=for-the-badge&logo=apacheairflow"/>
-  <img src="https://img.shields.io/badge/Docker-Container-blue?style=for-the-badge&logo=docker"/>
+  <b>Automated Data Engineering pipeline using Python, PostgreSQL, Apache Airflow, Docker, and AWS S3</b>
 </p>
 
 <p align="center">
-  <b>Production-Ready ETL Pipeline using Python, PostgreSQL & Apache Airflow</b>
+  <img src="https://img.shields.io/badge/Python-Data%20Pipeline-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Apache%20Airflow-Orchestration-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-Local%20Setup-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS%20S3-Object%20Storage-569A31?style=for-the-badge&logo=amazons3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/ETL-Workflow-2E8B57?style=for-the-badge"/>
 </p>
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
-This project demonstrates a **production-grade ETL (Extract, Transform, Load) pipeline** using Python, PostgreSQL, and Apache Airflow.
+This project demonstrates an end-to-end Data Engineering ETL pipeline using Python, Apache Airflow, PostgreSQL, Docker, and AWS S3.
 
-It processes real-world e-commerce data, performs transformation, and loads structured data into a database for analytics.
+The pipeline extracts raw e-commerce data, applies transformation logic, and loads structured data into PostgreSQL for analytics. Apache Airflow is used to orchestrate and monitor the workflow.
 
----
+## Tech Stack
 
-## 🧰 Tech Stack
+- Python
+- Pandas
+- PostgreSQL
+- Apache Airflow
+- Docker
+- AWS S3
+- Git and GitHub
 
-- **Python (Pandas)**
-- **PostgreSQL**
-- **Apache Airflow**
-- **Docker**
-- **AWS S3**
-- **Git & GitHub**
+## Pipeline Architecture
 
----
-## ⚙️ Pipeline Architecture
-Raw Data (CSV)  
+Raw CSV Data  
 ↓  
-Python ETL (Pandas)  
+Python ETL Script  
+↓  
+Data Cleaning and Transformation  
 ↓  
 PostgreSQL Database  
 ↓  
-Airflow Automation  
+Apache Airflow Orchestration  
 
----
+## ETL Workflow
 
-## 🔄 Workflow
+### Extract
 
-### 🔹 Extract
-- Load raw dataset (CSV)
-- Source: Kaggle
+The pipeline extracts raw e-commerce data from a CSV source.
 
-### 🔹 Transform
-- Removed null values and duplicates  
-- Filtered invalid records  
-- Converted data types  
-- Created feature: `TotalPrice = Quantity × UnitPrice`  
+### Transform
 
-### 🔹 Load
-- Loaded data into PostgreSQL  
-- Used `psycopg2`  
-- Implemented batch insertion  
+The transformation layer performs the following operations:
 
----
+- Removes null records
+- Removes duplicate records
+- Filters invalid transactions
+- Converts data types
+- Creates calculated fields such as TotalPrice
+- Prepares clean structured data for loading
 
-## 📊 Airflow Pipeline Execution
+### Load
 
-### ✅ DAG Success
+The cleaned dataset is loaded into PostgreSQL for storage and analysis.
 
-<p align="center">
-  <img src="images/airflow_success.png.png" width="700"/>
-</p>
+## Airflow Orchestration
 
----
+Apache Airflow is used to schedule, run, and monitor the ETL workflow.
 
-## 📈 Key Highlights
+The DAG defines the task sequence for:
 
-- ✅ Built complete ETL pipeline  
-- ✅ Handled real-world data issues  
-- ✅ Integrated Python with PostgreSQL  
-- ✅ Automated workflow using Airflow  
-- ✅ Dockerized environment  
+- Extracting data
+- Transforming data
+- Loading data into PostgreSQL
+- Monitoring task success or failure
 
----
+## Project Structure
 
-## 📊 Business Value
+etl-airflow-s3-project/
 
-- 📈 Revenue analysis  
-- 👥 Customer insights  
-- 📉 Sales trend tracking  
+- dags/
+  - Airflow DAG file
+- data/
+  - Raw dataset
+- scripts/
+  - ETL Python scripts
+- images/
+  - airflow_success.png
+- docker-compose.yaml
+- README.md
+- requirements.txt
 
----
+## Business Value
 
-## 🏁 Outcome
+This pipeline prepares clean structured data for:
 
-Developed a **scalable, modular pipeline** demonstrating strong data engineering skills.
+- Revenue analysis
+- Sales trend analysis
+- Customer behavior analysis
+- Product performance analysis
 
----
+## Screenshots
 
-## 🔮 Future Enhancements
+### Airflow DAG Execution
 
-- 🔁 Advanced Airflow scheduling  
-- ☁️ AWS integration (S3 + EC2)  
-- ⚡ PySpark for big data  
-- 📊 Dashboard (Power BI / Streamlit)  
+![Airflow DAG Execution](images/airflow_success.png.png)
 
----
+## How To Run
 
-## 👨‍💻 Author
+Install dependencies:
 
-**Komal Kashyap**
+- pip install -r requirements.txt
 
----
+Start Airflow with Docker:
+
+- docker compose up
+
+Open Airflow UI:
+
+- http://localhost:8080
+
+Run the DAG from the Airflow web interface.
+
+## Key Skills Demonstrated
+
+- ETL pipeline development
+- Apache Airflow DAG creation
+- Workflow orchestration
+- Python data transformation
+- PostgreSQL data loading
+- Docker-based project setup
+- AWS S3 object storage integration
+- GitHub project documentation
+
+## Future Improvements
+
+- Add data quality checks
+- Add logging for each pipeline stage
+- Store raw and processed files separately in S3
+- Add incremental data loading
+- Add dashboard layer for reporting
+
+## Project Explanation
+
+This project shows how raw e-commerce data can be processed through an automated ETL workflow. Airflow manages the pipeline execution, Python handles the transformation logic, PostgreSQL stores the cleaned data, and S3 is used as object storage in the pipeline.
+
+## Author
+
+Komal Kashyap
